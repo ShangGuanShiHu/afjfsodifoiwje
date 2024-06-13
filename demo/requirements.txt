@@ -100,4 +100,5 @@ tzdata==2024.1
 urllib3==2.2.1
 wrapt==1.16.0
 yarl==1.9.4
+sentencepiece==0.2.0
 FlagEmbedding==1.2.10
