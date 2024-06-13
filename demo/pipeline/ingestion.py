@@ -13,6 +13,8 @@ from qdrant_client.http.exceptions import UnexpectedResponse
 from custom.template import SUMMARY_EXTRACT_TEMPLATE
 from custom.transformation import CustomFilePathExtractor, CustomTitleExtractor
 
+from demo.custom.transformation import CustomSummaryExtractor
+
 
 def read_data(path: str = "data") -> list[Document]:
     reader = SimpleDirectoryReader(
@@ -29,17 +31,17 @@ def build_pipeline(
     llm: LLM,
     embed_model: BaseEmbedding,
     template: str = None,
-    vector_store: BasePydanticVectorStore = None,
+    vector_store: BasePydanticVectorStore = None
 ) -> IngestionPipeline:
     transformation = [
         SentenceSplitter(chunk_size=1024, chunk_overlap=50),
         CustomTitleExtractor(metadata_mode=MetadataMode.EMBED),
         CustomFilePathExtractor(last_path_length=4, metadata_mode=MetadataMode.EMBED),
-        # SummaryExtractor(
-        #     llm=llm,
-        #     metadata_mode=MetadataMode.EMBED,
-        #     prompt_template=template or SUMMARY_EXTRACT_TEMPLATE,
-        # ),
+        CustomSummaryExtractor(
+            llm=llm,
+            metadata_mode=MetadataMode.EMBED,
+            prompt_template=template or SUMMARY_EXTRACT_TEMPLATE,
+        ),
         embed_model,
     ]
 
