@@ -15,6 +15,9 @@ from pipeline.ingestion import build_pipeline, build_vector_store, read_data
 from pipeline.qa import read_jsonl, save_answers, save_pkl
 from pipeline.rag import QdrantRetriever, generation_with_knowledge_retrieval
 
+import nltk
+nltk.download('punkt')
+
 retrieval_top_n = 30
 rerank_top_n = 10
 
