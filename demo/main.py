@@ -9,8 +9,8 @@ from llama_index.llms.ollama import Ollama
 from qdrant_client import models
 from tqdm.asyncio import tqdm
 
-from demo.pipeline.retriever.bm25_retriever import BM25Retriever
-from demo.pipeline.retriever.fusion_retriever import FusionRetriever
+from pipeline.retriever.bm25_retriever import BM25Retriever
+from pipeline.retriever.fusion_retriever import FusionRetriever
 from pipeline.ingestion import build_pipeline, build_vector_store, read_data
 from pipeline.qa import read_jsonl, save_answers, save_pkl
 from pipeline.rag import QdrantRetriever, generation_with_knowledge_retrieval
