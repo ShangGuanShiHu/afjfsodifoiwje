@@ -6,6 +6,9 @@ mkdir bin
 # install ollama
 wget "https://modelscope.cn/api/v1/models/issaccv/OllamaDeploy/repo?Revision=master&FilePath=ollama-linux-amd64" -O bin/ollama
 
+# 设置执行权限
+chmod u+x ollama
+
 # run ollama in the background
 bin/ollama serve &
 
