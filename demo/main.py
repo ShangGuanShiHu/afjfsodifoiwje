@@ -1,4 +1,5 @@
 import asyncio
+import os.path
 
 import torch
 from dotenv import dotenv_values
@@ -87,6 +88,8 @@ async def main():
         query_context_map[query["query"]] = context_str
 
     # 处理结果
+    if not os.path.exists("./logs"):
+        os.makedirs("./logs")
     save_answers(queries, results, "submit_result.jsonl")
     save_pkl("logs/context.pkl", query_context_map)
 
