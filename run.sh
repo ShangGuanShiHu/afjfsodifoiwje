@@ -31,5 +31,10 @@ mv demo/dataset/question.jsonl demo/question.jsonl
 
 unzip demo/dataset/data.zip -d demo/
 
+# install punkt.zip
+mkdir -p /root/nltk_data/tokenizers
+unzip -o punkt.zip -d /root/nltk_data/tokenizers/
+
+
 # print info 
 echo "The Ollama server is running in the background. Please close current terminal and you can now play with demo!"
