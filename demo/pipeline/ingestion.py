@@ -9,11 +9,9 @@ from llama_index.core.schema import Document, MetadataMode
 from llama_index.vector_stores.qdrant import QdrantVectorStore
 from qdrant_client import AsyncQdrantClient, models
 from qdrant_client.http.exceptions import UnexpectedResponse
-
+from llama_index.legacy.llms import OpenAILike as OpenAI
 from custom.template import SUMMARY_EXTRACT_TEMPLATE
-from custom.transformation import CustomFilePathExtractor, CustomTitleExtractor
-
-from custom.transformation import CustomSummaryExtractor
+from custom.transformation import CustomFilePathExtractor, CustomTitleExtractor, CustomSummaryExtractor
 
 
 def read_data(path: str = "data") -> list[Document]:
