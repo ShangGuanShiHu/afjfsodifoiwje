@@ -1,6 +1,7 @@
 from typing import Optional, Sequence
 from llama_index.core.extractors.interface import BaseExtractor
 from llama_index.core.schema import BaseNode
+from llama_index.llms.ollama import Ollama
 from llama_index_client import TextNode
 from llama_index.core import PromptTemplate
 from llama_index.core.async_utils import DEFAULT_NUM_WORKERS, run_jobs
@@ -83,7 +84,7 @@ class CustomSummaryExtractor(BaseExtractor):
         prompt_template (str): template for summary extraction
     """
 
-    llm: OpenAI = Field(description="The LLM to use for generation.")
+    llm: Ollama = Field(description="The LLM to use for generation.")
     summaries: List[str] = Field(
         description="List of summaries to extract: 'self', 'prev', 'next'"
     )
