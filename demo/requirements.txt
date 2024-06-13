@@ -102,3 +102,4 @@ wrapt==1.16.0
 yarl==1.9.4
 sentencepiece==0.2.0
 FlagEmbedding==1.2.10
+snownlp==0.12.3

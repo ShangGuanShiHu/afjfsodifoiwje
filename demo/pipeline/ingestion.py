@@ -13,7 +13,7 @@ from qdrant_client.http.exceptions import UnexpectedResponse
 from custom.template import SUMMARY_EXTRACT_TEMPLATE
 from custom.transformation import CustomFilePathExtractor, CustomTitleExtractor
 
-from demo.custom.transformation import CustomSummaryExtractor
+from custom.transformation import CustomSummaryExtractor
 
 
 def read_data(path: str = "data") -> list[Document]:
