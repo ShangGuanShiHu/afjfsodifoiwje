@@ -17,7 +17,7 @@ from pipeline.qa import read_jsonl, save_answers, save_pkl
 from pipeline.rag import QdrantRetriever, generation_with_knowledge_retrieval
 
 retrieval_top_n = 30
-rerank_top_n = 10
+rerank_top_n = 5
 
 async def main():
     config = dotenv_values(".env")
