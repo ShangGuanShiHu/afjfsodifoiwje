@@ -12,11 +12,17 @@ QA_TEMPLATE = """\
     回答：\
     """
 
+HYDE_TEMPLATE= """\
+    请你回答以下问题，尽可能包括更多的关键词和细节：
+    {context_str}
+
+    回答：\
+    """
 
 SUMMARY_EXTRACT_TEMPLATE = """\
     这是这一小节的内容：
     {context_str}
-    请用中文总结本节的关键主题和实体。
+    请用中文总结本节的关键主题和实体，限制在20个字以内。
 
     总结：\
     """

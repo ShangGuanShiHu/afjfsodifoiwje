@@ -14,7 +14,8 @@ from pipeline.retriever.bm25_retriever import BM25Retriever
 from pipeline.retriever.fusion_retriever import FusionRetriever
 from pipeline.ingestion import build_pipeline, build_vector_store, read_data
 from pipeline.qa import read_jsonl, save_answers, save_pkl
-from pipeline.rag import QdrantRetriever, generation_with_knowledge_retrieval
+from pipeline.retriever.qdrant_retriever import QdrantRetriever
+from pipeline.rag import generation_with_knowledge_retrieval
 
 retrieval_top_n = 30
 rerank_top_n = 5
