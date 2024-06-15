@@ -38,3 +38,11 @@ unzip -o punkt.zip -d /root/nltk_data/tokenizers/
 
 # print info 
 echo "The Ollama server is running in the background. Please close current terminal and you can now play with demo!"
+
+# python -m venv .venv
+
+# pip install -r demo/requirements.txt
+
+# cp demo/.env.example demo/.env
+
+# echo "environment finishing. please source .venv/bin/activate , cd demo and  nohup python main.py &"
